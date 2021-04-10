@@ -1,0 +1,76 @@
+ *{
+     box-sizing: border-box;
+    }
+    .login{
+        width: 600 px;
+        width: auto;
+        background:rgba(255, 255, 255, 0.089);
+        height: 200px;
+        height: auto;
+        padding: 40px 70px;
+        border-radius: 10px;
+        position: absolute;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius:40px;
+        border-bottom-left-radius: 40px;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%);
+    }
+    .filed input{
+        width: 280px;
+        height: 40px;
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.247);
+        color: white;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border:2px solid rgba(255, 255, 255, 0);
+        font-size: 15px;
+    }
+    .log{
+        display: block;
+        width: 100%;
+        height: 50px;
+        border: none;
+        background: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: xx-large;
+    }
+    .font{
+        border-bottom: 2px solid rgba(255, 255, 255, 0.329);
+        margin-top: 5px;
+    }
+    button{
+        width: 100px;
+        height: 20px;
+        margin-left: 90px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.329);
+        color:white;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border:2px solid rgba(255, 255, 255, 0);
+    }
+    .navpar{
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border:2px solid rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0.329);
+        margin-left: 1050px;
+        margin-top: 20px;
+        width: 285px;
+        height: 30px;
+    }
+    .navpar a{
+        color: white;
+        margin-left: 20px;
+    }
+

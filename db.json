@@ -1,0 +1,53 @@
+{
+    "users": [
+        {
+            "name":"Mirna",
+            "email":"mirna@gmail.com",
+            "passowrd":12345
+        },
+        {
+            "name":"Ali",
+            "email":"ali@gmail.com",
+            "passowrd":98765
+        }
+    
+    ],
+    "posts":[
+        {
+            "publisher":"Mirna",
+            "content":"Hello bla bla orean like every but no all at the peresinfing ",
+            "image":"./image/4.jpg",
+            "reactions": "5",
+            "comments":[
+                {
+                    "publisher":"Nour",
+                    "image":"./image/2.jpg",
+                    "content":"Hello Mirna"
+                },
+                {
+                    "publisher":"HAMED",
+                    "image":"./image/1.jpg",
+                    "content":"Hello HABEB"
+                },
+                {
+                    "publisher":"Ahmad",
+                    "image":"./image/2.jpg",
+                    "content":"Hi Hi"
+                }
+            ]
+        },
+        {
+            "publisher":"Zain",
+            "content":"Bye bla bla orean like every but no all at the peresinfing ",
+            "image":"./image/1.jpg",
+            "reactions": "5",
+            "comments":[
+                {
+                    "publisher":"Ali",
+                    "image":"./image/3.jpg",
+                    "content":"Bye Zain"
+                }
+            ]
+        }
+    ]
+}

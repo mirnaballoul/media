@@ -1,53 +1,66 @@
 {
-    "users": [
+  "active": [
+    {
+      "name": "Ali",
+      "image": "./image/1.jpg",
+      "email": "ali@gmail.com",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Mirna",
+      "image": "./image/4.jpg",
+      "email": "mirna@gmail.com",
+      "passowrd": 12345
+    },
+    {
+      "id": 2,
+      "name": "Ali",
+      "image": "./image/1.jpg",
+      "email": "ali@gmail.com",
+      "passowrd": 98765
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "publisher": "Mirna",
+      "content": "Hello bla bla orean like every but no all at the peresinfing ",
+      "image": "./image/4.jpg",
+      "reactions": "5",
+      "comments": [
         {
-            "name":"Mirna",
-            "email":"mirna@gmail.com",
-            "passowrd":12345
+          "publisher": "Nour",
+          "image": "./image/2.jpg",
+          "content": "Hello Mirna"
         },
         {
-            "name":"Ali",
-            "email":"ali@gmail.com",
-            "passowrd":98765
-        }
-    
-    ],
-    "posts":[
-        {
-            "publisher":"Mirna",
-            "content":"Hello bla bla orean like every but no all at the peresinfing ",
-            "image":"./image/4.jpg",
-            "reactions": "5",
-            "comments":[
-                {
-                    "publisher":"Nour",
-                    "image":"./image/2.jpg",
-                    "content":"Hello Mirna"
-                },
-                {
-                    "publisher":"HAMED",
-                    "image":"./image/1.jpg",
-                    "content":"Hello HABEB"
-                },
-                {
-                    "publisher":"Ahmad",
-                    "image":"./image/2.jpg",
-                    "content":"Hi Hi"
-                }
-            ]
+          "publisher": "HAMED",
+          "image": "./image/1.jpg",
+          "content": "Hello HABEB"
         },
         {
-            "publisher":"Zain",
-            "content":"Bye bla bla orean like every but no all at the peresinfing ",
-            "image":"./image/1.jpg",
-            "reactions": "5",
-            "comments":[
-                {
-                    "publisher":"Ali",
-                    "image":"./image/3.jpg",
-                    "content":"Bye Zain"
-                }
-            ]
+          "publisher": "Ahmad",
+          "image": "./image/2.jpg",
+          "content": "Hi Hi"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "publisher": "Zain",
+      "content": "Bye bla bla orean like every but no all at the peresinfing ",
+      "image": "./image/1.jpg",
+      "reactions": "5",
+      "comments": [
+        {
+          "publisher": "Ali",
+          "image": "./image/3.jpg",
+          "content": "Bye Zain"
+        }
+      ]
+    }
+  ]
 }

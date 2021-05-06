@@ -1,11 +1,13 @@
-let posts = [];
+let myPosts = [];
 let comments = [];
 
 window.addEventListener('load', () => {
 
-    posts = fetch('http://localhost:3000/posts')
-        .then(posts => posts.json()).then(posts =>
-            posts.forEach(element => {
+    fetch('http://localhost:3000/posts')
+        .then(res => res.json()).then(posts => {
+            console.log('asd', posts);
+            myPosts = posts;
+            posts.forEach(async element => {
 
                 let publisher = document.createElement('h4');
                 publisher.innerText = element.publisher;
@@ -26,6 +28,35 @@ window.addEventListener('load', () => {
                 let image = document.createElement('img');
                 image.src = element.image;
                 image.setAttribute('class', 'imageClass');
+
+                let dell = await axios.get('http://localhost:3000/active');
+
+                const edit = document.createElement('button');
+                const del = document.createElement('button');
+
+                del.setAttribute('class', 'delclass');
+
+
+                if (element.publisher == dell.data.name) {
+                    edit.innerHTML = '<i class="fas fa-edit"></i>';
+                    del.innerHTML = '<i class="fas fa-trash"></i>';
+
+                    del.addEventListener('click', function () {
+                        axios({
+                            method: 'DELETE',
+                            url: 'http://localhost:3000/posts/' + element.id,
+                        })
+                    });
+                    edit.addEventListener('click',function() {
+                        axios({
+                            method: 'PUT',
+                            url: 'http://localhost:3000/posts/',
+                        })
+                    });
+    
+                }
+
+
                 let dv = document.createElement('div');
                 dv.setAttribute('class', 'divClass');
                 dv.appendChild(reactions);
@@ -33,8 +64,7 @@ window.addEventListener('load', () => {
                 dv.appendChild(publisher);
                 dv.appendChild(content);
                 dv.appendChild(img);
-
-
+                dv.appendChild(del);
 
 
                 let commentsDiv = document.createElement('div');
@@ -64,14 +94,17 @@ window.addEventListener('load', () => {
                 postsDialog.setAttribute('class', 'divClass');
                 dv.appendChild(commentsDiv);
                 postsDialog.appendChild(dv);
-            }));
+            }
+            )
 
+        });
 
 });
 
 let id = 1;
 
 function addNewPost() {
+    console.log('1');
     let current = fetch('http://localhost:3000/active')
         .then(active => active.json()).then(async current => {
             console.log(current);
@@ -89,5 +122,7 @@ function addNewPost() {
                     window.location.assign('file:///C:/Users/Shaam/Desktop/JSON/social/posts.html');
                 })
 
+
         })
 }
+

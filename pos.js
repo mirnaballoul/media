@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
 
     fetch('http://localhost:3000/posts')
         .then(res => res.json()).then(posts => {
-            console.log('asd', posts);
             myPosts = posts;
             posts.forEach(async element => {
 
@@ -34,12 +33,12 @@ window.addEventListener('load', () => {
                 const edit = document.createElement('button');
                 const del = document.createElement('button');
 
-                del.setAttribute('class', 'delclass');
+                del.setAttribute('class', 'btnclass');
+                edit.setAttribute('class', 'btnclass');
 
-
-                if (element.publisher == dell.data.name) {
-                    edit.innerHTML = '<i class="fas fa-edit"></i>';
-                    del.innerHTML = '<i class="fas fa-trash"></i>';
+                if (element.publisher == dell.data[0].name) {
+                    edit.innerHTML = '<i class="fa fa-edit fa-2x"></i>';
+                    del.innerHTML = '<i class="fa fa-trash fa-2x"></i>';
 
                     del.addEventListener('click', function () {
                         axios({
@@ -64,6 +63,7 @@ window.addEventListener('load', () => {
                 dv.appendChild(publisher);
                 dv.appendChild(content);
                 dv.appendChild(img);
+                dv.appendChild(edit);
                 dv.appendChild(del);
 
 
@@ -96,7 +96,6 @@ window.addEventListener('load', () => {
                 postsDialog.appendChild(dv);
             }
             )
-
         });
 
 });
@@ -104,7 +103,6 @@ window.addEventListener('load', () => {
 let id = 1;
 
 function addNewPost() {
-    console.log('1');
     let current = fetch('http://localhost:3000/active')
         .then(active => active.json()).then(async current => {
             console.log(current);
@@ -119,7 +117,7 @@ function addNewPost() {
                 "comments": [],
             })
                 .then((response) => {
-                    window.location.assign('file:///C:/Users/Shaam/Desktop/JSON/social/posts.html');
+                    window.location.assign('./posts.html');
                 })
 
 

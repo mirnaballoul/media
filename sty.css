@@ -44,10 +44,9 @@ body{
     margin: 10px 25px;
     text-decoration: underline;
 }
-.delclass{
-    margin-left: 600px;
-    height: 20px;
-    width: 20px;
+.btnclass{
+    width: auto;
+    height: auto;
 }
 .divvClass{
     padding: 5px 10px;
@@ -91,5 +90,4 @@ button{
     width: 60px;
     height: 20px;
     margin-left: 626px;
-    color: rgba(128, 128, 128, 0.432);
 }

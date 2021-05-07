@@ -18,7 +18,7 @@ function logInUser() {
                         email: data[i].email
                     }).then(() => {
 
-                        window.location.assign('file:///C:/Users/Shaam/Desktop/JSON/social/posts.html?');
+                        window.location.assign('./posts.html');
                     })
             }
         }

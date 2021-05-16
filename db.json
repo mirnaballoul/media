@@ -1,9 +1,9 @@
 {
   "active": [
     {
-      "name": "Mirna",
-      "image": "./image/4.jpg",
-      "email": "mirna@gmail.com",
+      "name": "Ali",
+      "image": "./image/1.jpg",
+      "email": "ali@gmail.com",
       "id": 1
     }
   ],
@@ -25,6 +25,30 @@
   ],
   "posts": [
     {
+      "id": 1,
+      "publisher": "Mirna",
+      "content": "Hello bla bla orean like every but no all at the peresinfing ",
+      "image": "./image/4.jpg",
+      "reactions": "5",
+      "comments": [
+        {
+          "publisher": "Nour",
+          "image": "./image/2.jpg",
+          "content": "Hello Mirna"
+        },
+        {
+          "publisher": "HAMED",
+          "image": "./image/1.jpg",
+          "content": "Hello HABEB"
+        },
+        {
+          "publisher": "Ahmad",
+          "image": "./image/2.jpg",
+          "content": "Hi Hi"
+        }
+      ]
+    },
+    {
       "id": 2,
       "publisher": "Zain",
       "content": "Bye bla bla orean like every but no all at the peresinfing ",
@@ -39,11 +63,15 @@
       ]
     },
     {
-      "id": 3,
-      "publisher": "Mirna",
-      "content": "aaa",
+      "content": "ji",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "publisher": "Ali",
+      "content": "hi",
       "reactions": "0",
-      "image": "./image/4.jpg",
+      "image": "./image/1.jpg",
       "comments": []
     }
   ]

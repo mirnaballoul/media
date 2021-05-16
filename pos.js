@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
             myPosts = posts;
             posts.forEach(async element => {
 
+                let dv = document.createElement('div');
                 let publisher = document.createElement('h4');
                 publisher.innerText = element.publisher;
                 publisher.setAttribute('class', 'titleClass');
@@ -30,11 +31,12 @@ window.addEventListener('load', () => {
 
                 let dell = await axios.get('http://localhost:3000/active');
 
-                const edit = document.createElement('button');
-                const del = document.createElement('button');
+                const edit = document.createElement('i');
+                const del = document.createElement('i');
+                edit.myParams = element.id;
 
                 del.setAttribute('class', 'btnclass');
-                edit.setAttribute('class', 'btnclass');
+                edit.setAttribute('class', 'btn1class');
 
                 if (element.publisher == dell.data[0].name) {
                     edit.innerHTML = '<i class="fa fa-edit fa-2x"></i>';
@@ -45,26 +47,61 @@ window.addEventListener('load', () => {
                             method: 'DELETE',
                             url: 'http://localhost:3000/posts/' + element.id,
                         })
+                            .then((response) => {
+                                window.location.assign('./posts.html');
+                            })
                     });
-                    edit.addEventListener('click',function() {
-                        axios({
-                            method: 'PUT',
-                            url: 'http://localhost:3000/posts/',
-                        })
+                    edit.addEventListener('click', function (event) {
+                        
+                        let id = event.currentTarget.myParams;
+                        let button1 = document.createElement('input');
+                        button1.setAttribute('id', 'edit');
+                        button1.setAttribute('class', 'button1class');
+
+                        let button2 = document.createElement('button');
+                        button2.innerText = "save";
+                        button2.setAttribute('class', 'button2class');
+                        button2.addEventListener('click', function (){
+                            let e = document.getElementById('edit').value;
+                            let p=document.getElementById('h4').value;
+                            
+                            let r=document.getElementById('h4').value;
+                            
+                            let i =document.getElementById('img');
+                            
+
+                            axios.put('http://localhost:3000/posts/' + id ,
+
+                                {
+                                    "content": e,
+                                    "publisher":p,
+                                   
+                                    "reactions":r,
+                                     "image":i,
+
+                                })
+                                
+
+                                .then((response) => {
+                                    window.location.assign('./posts.html');
+                                })
+
+                            })
+                        dv.appendChild(button1);
+                        dv.appendChild(button2);
                     });
-    
+
                 }
 
 
-                let dv = document.createElement('div');
                 dv.setAttribute('class', 'divClass');
                 dv.appendChild(reactions);
                 dv.appendChild(image);
                 dv.appendChild(publisher);
                 dv.appendChild(content);
                 dv.appendChild(img);
-                dv.appendChild(edit);
                 dv.appendChild(del);
+                dv.appendChild(edit);
 
 
                 let commentsDiv = document.createElement('div');
@@ -108,6 +145,7 @@ function addNewPost() {
             console.log(current);
             let con = document.getElementById('post').value;
             let posts = await axios.get('http://localhost:3000/posts');
+
             axios.post('http://localhost:3000/posts', {
                 "id": posts.length + 1,
                 "publisher": current[0].name,
@@ -116,6 +154,7 @@ function addNewPost() {
                 "image": current[0].image,
                 "comments": [],
             })
+
                 .then((response) => {
                     window.location.assign('./posts.html');
                 })

@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="sty.css">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div>
-            <div class="file">
-                <input type="post" id="post">
-                <i class="fa fa-trash"></i>
-            </div>
-            <button onclick="addNewPost()" >Post</button>
 
-            <div id="posts"></div>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sty.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <div class="file">
+            <input type="post" id="post">
+
         </div>
-        <script src="pos.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
-    </body>
+        <button onclick="addNewPost()">Post</button>
+
+        <div id="posts"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"></script>
+    <script src="pos.js"></script>
+</body>
+
 </html>

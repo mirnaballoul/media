@@ -69,6 +69,7 @@ body{
     border-bottom-right-radius: 100px;
     border-bottom-left-radius: 100px;
     font-size: large;
+    outline: none;
 
 }
 .button2class{
@@ -109,6 +110,7 @@ body{
     width: 250px;
     height: 100px;
     margin-top: 5px;
+   
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -116,6 +118,7 @@ body{
     margin-left:550px ;
     font-size: large;
     color: black;
+    outline: none;
 }
 button{
         width: 100px;

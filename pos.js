@@ -55,6 +55,9 @@ window.addEventListener('load', () => {
                         
                         let id = event.currentTarget.myParams;
                         let button1 = document.createElement('input');
+                        
+                        button1.value=element.content;
+                        
                         button1.setAttribute('id', 'edit');
                         button1.setAttribute('class', 'button1class');
 
@@ -63,23 +66,22 @@ window.addEventListener('load', () => {
                         button2.setAttribute('class', 'button2class');
                         button2.addEventListener('click', function (){
                             let e = document.getElementById('edit').value;
-                            let p=document.getElementById('h4').value;
-                            
-                            let r=document.getElementById('h4').value;
-                            
-                            let i =document.getElementById('img');
+                                    
                             
 
                             axios.put('http://localhost:3000/posts/' + id ,
 
                                 {
-                                    "content": e,
-                                    "publisher":p,
-                                   
-                                    "reactions":r,
-                                     "image":i,
-
+                                     "content": e,
+                                     "publisher":element.publisher,
+                                     "reactions":0,
+                                     "image":element.image,
+                                     "comments":[],
+                                     
+                                        
                                 })
+                                
+                                
                                 
 
                                 .then((response) => {
